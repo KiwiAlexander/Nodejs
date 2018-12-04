@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <title>WebNode - Alex</title>
+
+  <!-- D3 -->
+  <script src='https://d3js.org/d3.v4.min.js'></script>
+
+<!-- jQuery -->
+ <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap Core Css -->
+  <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.css">
+
+  <!-- Waves Effect Css -->
+  <link rel="stylesheet" type="text/css" href="plugins/node-waves/waves.css">
+
+  <!-- Animation Css -->
+  <link rel="stylesheet" type="text/css" href="plugins/animate-css/animate.css">
+
+  <!-- Morris Chart Css-->
+  <link rel="stylesheet" type="text/css" href="plugins/morrisjs/morris.css">
+
+  <!-- Custom Css -->
+  <link rel=stylesheet type=text/css href="style.css">
+
+  <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+  <link rel=stylesheet type=text/css href="themes/all-themes.css">
+</head>
+
+<body class="theme-blue">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Please wait...</p>
+    </div>
+</div>
+<!-- #END# Page Loader -->
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+<!-- Top Bar -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="javascript:void(0);" class="bars"></a>
+            <a class="navbar-brand" href="home.html">Alex Phillips Node Postgres</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- #Top Bar -->
+<section>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">MAIN NAVIGATION</li>
+                <li class="active">
+                    <a href="home">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="home">
+                        <i class="material-icons">inspirations</i>
+                        <span>Inspirations</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- #Menu -->
+        <!-- Footer -->
+        <div class="legal">
+            <div class="copyright">
+                &copy; 2018 <a href="https://philas1.pages.op-bit.nz/">Alex Phillips</a>.
+            </div>
+            <div class="version">
+                <b>WebAssignment: </b> Node
+            </div>
+        </div>
+        <!-- #Footer -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+    <!-- Right Sidebar -->
+    <aside id="rightsidebar" class="right-sidebar">
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+            <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+            <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="settings">
+                <div class="demo-settings">
+                    <p>GENERAL SETTINGS</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Report Panel Usage</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Email Redirect</span>
+                            <div class="switch">
+                                <label><input type="checkbox"><span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>SYSTEM SETTINGS</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Notifications</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Auto Updates</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>ACCOUNT SETTINGS</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Offline</span>
+                            <div class="switch">
+                                <label><input type="checkbox"><span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Location Permission</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- #END# Right Sidebar -->
+</section>
+    <section class="content">
+    <div class="block-header">
+      <h2>DASHBOARD</h2>
+    </div>
+    <!-- CPU Usage -->
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+          <div class="header">
+            <div class="row clearfix">
+              <div class="col-xs-12 col-sm-6 align-right">
+            </div>
+          </div>
+          <div class="body">
+
+
+<svg width="1575" height="860"></svg>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 80, bottom: 30, left: 70},
+    width = svg.attr("width") - margin.left - margin.right,
+    height = svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var parseTime = d3.timeParse("%Y%m%d");
+var logScale = d3.scaleLog()
+  .domain([10, 100000])
+  .range([0, 600]);
+
+var x = d3.scaleTime().range([0, width]),
+    y = d3.scaleLog().range([height, 0]),
+    z = d3.scaleOrdinal(d3.schemeCategory10);
+
+var line = d3.line()
+    .curve(d3.curveBasis)
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.temperature); });
+
+    function compare(a,b) {
+	  if (a.date < b.date)
+		return -1;
+	  if (a.date > b.date)
+		return 1;
+	  return 0;
+	}
+
+
+ $.get("/api/get/cellphones", function(data) {
+        //data = JSON.parse();
+
+console.log("dATA",data)
+  var dates = [];
+  console.log("inside");
+
+  var cities = data.map(function(d) {
+      var allobjs = [];
+      console.log("d", d)
+    $.each(d.year, function(i,e){
+      var date = i.replace("y","") + "1010";
+      date = parseTime(date);
+      dates.push(date);
+	  if(parseInt(e) != 0)
+	{
+       var obj = {date:date,temperature:parseInt(e)};     
+       allobjs.push(obj);
+	   }
+      
+    });
+  allobjs.sort(compare);
+    return {
+      id: d.Country,
+      values: allobjs   
+    };
+  });
+
+
+  x.domain(d3.extent(dates, function(d) { return d; }));
+
+var myMin = d3.min(cities, function(c) { 
+    return d3.min(c.values, function(d) { 
+      return d.temperature; 
+    }); 
+  });
+
+  var myMax = d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.temperature; }); });
+
+
+  y.domain([
+    myMin,
+    myMax
+  ]);
+
+  z.domain(cities.map(function(c) { return c.id; }));
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("fill", "#000")
+      .text("Nยบ, Cellphone");
+  var city = g.selectAll(".city")
+    .data(cities)
+    .enter().append("g")
+      .attr("class", "city");
+
+  city.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { console.log(d); return line(d.values); }) //console.log(d.id,d.values)
+      .style("stroke", function(d) { return z(d.id); })
+      .style("fill", 'transparent').on("mouseover", function(){
+        console.log("doing it");
+      });
+
+  city.append("text")
+      .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
+      .attr("x", 3)
+      .attr("dy", "0.35em")
+      .style("font", "10px sans-serif")
+      .text(function(d) { return d.id; });
+	
+	
+  });
+
+  /*const mouseOver = g
+    .append('g')
+    .attr('class', 'mouse-over-effects');
+
+  mouseOver
+    .append('path')
+    .attr('class', 'mouse-line')
+    .style('stroke', 'black')
+    .style('stroke-width', '1px')
+    .style('opacity', '0');
+    console.log("Mouseoverworking")
+  */
+
+var mouseG = svg.append("g")
+      .attr("class", "mouse-over-effects");
+
+mouseG.append("path") // this is the black vertical line to follow mouse
+  .attr("class", "mouse-line")
+  .style("stroke", "black")
+  .style("stroke-width", "1px")
+  .style("opacity", "0");
+
+var lines = document.getElementsByClassName('line');
+
+var mousePerLine = mouseG.selectAll('.mouse-per-line')
+.data(cities)
+.enter()
+.append("g")
+.attr("class", "mouse-per-line");
+
+    mousePerLine.append("circle")
+      .attr("r", 7)
+      .style("stroke", function (d) {
+        return color(d.name);
+      })
+      .style("fill", "none")
+      .style("stroke-width", "1px")
+      .style("opacity", "0");
+
+    mousePerLine.append("text")
+      .attr("transform", "translate(10,3)");
+
+    mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
+      .attr('width', width) // can't catch mouse events on a g element
+      .attr('height', height)
+      .attr('fill', 'none')
+      .attr('pointer-events', 'all')
+      .on('mouseout', function () { // on mouse out hide line, circles and text
+        d3.select(".mouse-line")
+          .style("opacity", "0");
+        d3.selectAll(".mouse-per-line circle")
+          .style("opacity", "0");
+        d3.selectAll(".mouse-per-line text")
+          .style("opacity", "0");
+      })
+      .on('mouseover', function () { // on mouse in show line, circles and text
+        d3.select(".mouse-line")
+          .style("opacity", "1");
+        d3.selectAll(".mouse-per-line circle")
+          .style("opacity", "1");
+        d3.selectAll(".mouse-per-line text")
+          .style("opacity", "1");
+      })
+      .on('mousemove', function () { // mouse moving over canvas
+        var mouse = d3.mouse(this);
+
+        d3.selectAll(".mouse-per-line")
+          .attr("transform", function (d, i) {
+
+            var xDate = x.invert(mouse[0]),
+              bisect = d3.bisector(function (d) { return d.date; }).left;
+            idx = bisect(d.values, xDate);
+
+            d3.select(this).select('text')
+              .text(y.invert(y(d.values[idx].temperature)).toFixed(2));
+
+            d3.select(".mouse-line")
+              .attr("d", function () {
+                var data = "M" + x(d.values[idx].date) + "," + height;
+                data += " " + x(d.values[idx].date) + "," + 0;
+                return data;
+              });
+            return "translate(" + x(d.values[idx].date) + "," + y(d.values[idx].temperature) + ")";
+          });
+      });
+
+function type(d, _, columns) {
+  d.date = parseTime(d.date);
+  for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
+  return d;
+}
+
+
+</script>
+          
+
+<!-- https://stackoverflow.com/questions/43811434/error-path-attribute-d-expected-number-mnan-nanlnan-nan/43811720 -->
+            
+          </div>
+        </div>      
+      </div>
+    </div>
+</section>
+
+<!-- Jquery Core Js -->
+<script src="plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core Js -->
+<script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+<!-- Select Plugin Js -->
+<script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+<!-- Slimscroll Plugin Js -->
+<script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+<!-- Waves Effect Plugin Js -->
+<script src="plugins/node-waves/waves.js"></script>
+
+<!-- Jquery CountTo Plugin Js -->
+<script src="plugins/jquery-countto/jquery.countTo.js"></script>
+
+<!-- Morris Plugin Js -->
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/morrisjs/morris.js"></script>
+
+<!-- Flot Charts Plugin Js -->
+<script src="filename='plugins/flot-charts/jquery.flot.js"></script>
+<script src="plugins/flot-charts/jquery.flot.resize.js"></script>
+<script src="plugins/flot-charts/jquery.flot.pie.js'"></script>
+<script src="plugins/flot-charts/jquery.flot.categories.js"></script>
+<script src="plugins/flot-charts/jquery.flot.time.js"></script>
+
+<!-- Sparkline Chart Plugin Js -->
+<script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+<!-- Custom Js -->
+<script src="js/admin.js"></script>
+<script src="js/pages/index.js"></script>
+
+<!-- Demo Js -->
+<script src="js/demo.js"></script>
+</div>
+
+</html>
